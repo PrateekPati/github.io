@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Air & Steel – Classic Car Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b0c10;
+      color: #f5f5f5;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      max-width: 720px;
+      padding: 2.5rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: radial-gradient(circle at top left, #27293d 0, #10111a 50%, #050509 100%);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 1.5rem;
+      font-weight: 400;
+      color: #c9c9c9;
+    }
+    p {
+      line-height: 1.6;
+      color: #dcdcdc;
+      margin: 0 0 1.25rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #e6e6e6;
+      margin-bottom: 1rem;
+    }
+    .cta-row {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .btn-primary {
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: linear-gradient(135deg, #ffb347, #ff6133);
+      color: #151515;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+    }
+    .btn-secondary {
+      font-size: 0.9rem;
+      color: #aaaaaa;
+      text-decoration: none;
+    }
+    .meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #8c8c8c;
+      margin-top: 1.75rem;
+    }
+    @media (max-width: 640px) {
+      .card { padding: 1.8rem; margin: 1rem; }
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="tag">Premium Print • Classic Cars</div>
+    <h1>Air &amp; Steel</h1>
+    <h2>A premium classic car magazine celebrating metal, noise, and memory.</h2>
+    <p>
+      We’re building a slow, beautifully printed magazine for people who love old cars
+      not just as machines, but as stories. Long-form writing, serious photography,
+      and design that respects the cars as much as the people behind them.
+    </p>
+    <p>
+      Our first issue is in the works. If you’d like to be notified when we launch,
+      or you’re a writer, designer, or partner who wants to collaborate,
+      we’d love to hear from you.
+    </p>
+
+    <div class="cta-row">
+      <a href="mailto:info@airsteelmagazine.com?subject=Air%20and%20Steel%20Magazine" class="btn-primary">
+        Email us to stay in the loop
+      </a>
+      <a href="mailto:info@airsteelmagazine.com" class="btn-secondary">
+        Or pitch a story / collaboration →
+      </a>
+    </div>
+
+    <div class="meta">
+      © <span id="year"></span> Air &amp; Steel. All rights reserved.
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
