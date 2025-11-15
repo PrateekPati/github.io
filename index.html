@@ -1,125 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Air & Steel – Classic Car Magazine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Air &amp; Steel Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --accent: #222222;
+      --muted: #666666;
+      --border: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0b0c10;
-      color: #f5f5f5;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--fg);
       display: flex;
-      min-height: 100vh;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
     }
+
+    .page {
+      max-width: 900px;
+      width: 100%;
+      padding: 32px 20px 24px;
+    }
+
     .card {
-      max-width: 720px;
-      padding: 2.5rem;
+      border: 1px solid var(--border);
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: radial-gradient(circle at top left, #27293d 0, #10111a 50%, #050509 100%);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+      padding: 32px 24px 28px;
+      text-align: center;
     }
-    h1 {
-      font-size: 2.4rem;
-      margin: 0 0 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+
+    .hero-images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
     }
-    h2 {
-      margin: 0 0 1.5rem;
-      font-weight: 400;
-      color: #c9c9c9;
+
+    .hero-images img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      object-fit: cover;
+      display: block;
     }
-    p {
-      line-height: 1.6;
-      color: #dcdcdc;
-      margin: 0 0 1.25rem;
+
+    @media (min-width: 700px) {
+      .hero-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
-    .tag {
-      display: inline-block;
-      padding: 0.22rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.22);
-      color: #e6e6e6;
-      margin-bottom: 1rem;
-    }
-    .cta-row {
-      margin-top: 1.75rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-    }
-    .btn-primary {
-      padding: 0.8rem 1.6rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
+
+    .tagline-main {
+      font-size: 1.8rem;
       font-weight: 600;
-      text-decoration: none;
-      background: linear-gradient(135deg, #ffb347, #ff6133);
-      color: #151515;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 6px 0 8px;
     }
-    .btn-secondary {
-      font-size: 0.9rem;
-      color: #aaaaaa;
-      text-decoration: none;
+
+    .tagline-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 0 0 8px;
     }
-    .meta {
-      font-size: 0.8rem;
+
+    .coming-soon {
+      font-size: 1.3rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #8c8c8c;
-      margin-top: 1.75rem;
+      margin-top: 24px;
+      /* BIG GAP BELOW THIS LINE */
+      margin-bottom: 56px; /* Increase or decrease this value for more/less gap */
     }
-    @media (max-width: 640px) {
-      .card { padding: 1.8rem; margin: 1rem; }
-      h1 { font-size: 1.9rem; }
-      h2 { font-size: 1rem; }
+
+    .hiring-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .hiring-text {
+      margin: 0 0 4px;
+    }
+
+    .email {
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .email:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="tag">Premium Print • Classic Cars</div>
-    <h1>Air &amp; Steel</h1>
-    <h2>A premium classic car magazine celebrating metal, noise, and memory.</h2>
-    <p>
-      We’re building a slow, beautifully printed magazine for people who love old cars
-      not just as machines, but as stories. Long-form writing, serious photography,
-      and design that respects the cars as much as the people behind them.
-    </p>
-    <p>
-      Our first issue is in the works. If you’d like to be notified when we launch,
-      or you’re a writer, designer, or partner who wants to collaborate,
-      we’d love to hear from you.
-    </p>
+  <div class="page">
+    <main class="card">
+      <!-- (Image 1) -->
+      <div class="hero-images">
+        <img
+          src="image1.jpg"
+          alt="Air &amp; Steel automotive imagery 1"
+        />
 
-    <div class="cta-row">
-      <a href="mailto:info@airsteelmagazine.com?subject=Air%20and%20Steel%20Magazine" class="btn-primary">
-        Email us to stay in the loop
-      </a>
-      <a href="mailto:info@airsteelmagazine.com" class="btn-secondary">
-        Or pitch a story / collaboration →
-      </a>
-    </div>
+        <!-- (Image 2) -->
+        <img
+          src="image2.jpg"
+          alt="Air &amp; Steel automotive imagery 2"
+        />
+      </div>
 
-    <div class="meta">
-      © <span id="year"></span> Air &amp; Steel. All rights reserved.
-    </div>
-  </main>
+      <h1 class="tagline-main">The road unwinds, the story unfolds.</h1>
+      <p class="tagline-sub">
+        Purposefully curated, artfully crafted automotive legacy.
+      </p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <p class="coming-soon">Coming Soon.</p>
+
+      <section class="hiring">
+        <p class="hiring-title">We are hiring experts.</p>
+        <p class="hiring-text">Send us your resume and motivation at</p>
+        <p>
+          <a class="email" href="mailto:info@airsteelmagazine.com">
+            info@airsteelmagazine.com
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 Air &amp; Steel Magazine Private Limited
+    </footer>
+  </div>
 </body>
 </html>
