@@ -18,16 +18,17 @@
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  /* NEW: subtle dark gradient background */
+  background: linear-gradient(to bottom, #000000, #333333);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
 
     .page {
       max-width: 900px;
