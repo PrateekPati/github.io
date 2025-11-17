@@ -109,44 +109,47 @@
 
 
     
-   .email {
+  .email {
   font-weight: 600;
   text-decoration: none;
 
   /* Fallback solid color */
   color: #ffffff;
 
-  /* Subtle static gradient: white → light grey */
-  background: linear-gradient(120deg, #ffffff, #e0e0e0);
-  background-size: 200% 200%;
+  /* Single smooth gradient: white → light grey → moss green → white */
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #e0e0e0 30%,
+    #8a9a5b 60%,
+    #ffffff 100%
+  );
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* Smooth transition when entering/leaving hover */
+  transition: background-position 0.4s ease;
 }
 
 .email:hover {
-  animation: emailGradientLoop 3s ease-in-out infinite;
+  animation: emailGradientLoop 5s linear infinite;
 }
 
-/* Hover animation: white, light grey, moss green */
+/* Smooth loop: just slide the gradient left → right → left */
 @keyframes emailGradientLoop {
   0% {
     background-position: 0% 50%;
-    background-image: linear-gradient(120deg, #ffffff, #e0e0e0);
   }
-  33% {
-    background-position: 50% 50%;
-    background-image: linear-gradient(120deg, #ffffff, #8a9a5b); /* moss green */
-  }
-  66% {
+  50% {
     background-position: 100% 50%;
-    background-image: linear-gradient(120deg, #e0e0e0, #8a9a5b);
   }
   100% {
     background-position: 0% 50%;
-    background-image: linear-gradient(120deg, #ffffff, #e0e0e0);
   }
 }
-
 
 
 
@@ -177,7 +180,8 @@
         />
       </div>
 
-      <h1 class="tagline-main">Purposefully curated, artfully crafted automotive legacy.</h1>
+      <h1 class="tagline-main">Purposefully curated, artfully crafted</h1>
+      <h2 class="tagline-main">automotive legacy.</h2>
       <p class="tagline-sub">
         The road unwinds, the story unfolds.
       </p>
