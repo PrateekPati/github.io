@@ -111,23 +111,40 @@
     
    .email {
   font-weight: 600;
-  color: #ffffff;
   text-decoration: none;
-  background: linear-gradient(90deg, #ff4d4d, #ffcc00, #33ccff, #cc33ff);
-  background-size: 400% 400%;
+
+  /* Fallback solid color */
+  color: #ffffff;
+
+  /* Subtle static gradient: white → light grey */
+  background: linear-gradient(120deg, #ffffff, #e0e0e0);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: 0.3s ease;
 }
 
 .email:hover {
-  animation: glowGradient 2s ease infinite;
+  animation: emailGradientLoop 3s ease-in-out infinite;
 }
 
-@keyframes glowGradient {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Hover animation: white, light grey, moss green */
+@keyframes emailGradientLoop {
+  0% {
+    background-position: 0% 50%;
+    background-image: linear-gradient(120deg, #ffffff, #e0e0e0);
+  }
+  33% {
+    background-position: 50% 50%;
+    background-image: linear-gradient(120deg, #ffffff, #8a9a5b); /* moss green */
+  }
+  66% {
+    background-position: 100% 50%;
+    background-image: linear-gradient(120deg, #e0e0e0, #8a9a5b);
+  }
+  100% {
+    background-position: 0% 50%;
+    background-image: linear-gradient(120deg, #ffffff, #e0e0e0);
+  }
 }
 
 
